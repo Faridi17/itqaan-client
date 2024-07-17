@@ -1,0 +1,27 @@
+import kantin1 from '../images/kantin1.jpg';
+import kantin2 from '../images/kantin2.webp' 
+import halaman1 from '../images/halaman1.jpg' 
+import halaman2 from '../images/halaman2.jpg' 
+import kelas1 from '../images/kelas1.jpg' 
+import kelas2 from '../images/kelas2.webp' 
+import kelas3 from '../images/kelas3.jpg' 
+import masjid1 from '../images/masjid1.jpg' 
+import masjid2 from '../images/masjid2.jpeg' 
+import lapangan1 from '../images/bola.jpg' 
+import lapangan2 from '../images/basket.jpg' 
+import lapangan3 from '../images/futsal.jpg' 
+import lapangan4 from '../images/volly.jpg' 
+import itqaan from '../images/itqaan.png'
+import join1 from '../images/join1.jpg'
+import join2 from '../images/join2.jpg'
+import join3 from '../images/join3.jpg'
+import join4 from '../images/join4.jpg'
+import tahfizhQuran from '../images/tahfizhQuran.jpg'
+import clubBahasa from '../images/clubBahasa.jpg'
+import leadership from '../images/leadership.jpg'
+import computer from '../images/computer.jpg'
+import manah from '../images/manah.jpg'
+import kunjunganEdukatif from '../images/kunjunganEdukatif.jpeg'
+
+
+export { kantin1, kantin2, halaman1, halaman2, kelas1, kelas2, kelas3, masjid1, masjid2, lapangan1, lapangan2, lapangan3, lapangan4, itqaan, join1, join2, join3, join4, tahfizhQuran, clubBahasa, leadership, computer, manah, kunjunganEdukatif }
