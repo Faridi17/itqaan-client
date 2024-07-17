@@ -133,7 +133,7 @@ const EditRegistrant = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:3001/register/id/${id}`)
+        fetch(`https://itqaanserver-production.up.railway.app/register/id/${id}`)
             .then(response => {
                 response.json().then(registrantInfo => {
                     setRegistrationType(registrantInfo.jenis_pendaftaran)
@@ -256,7 +256,7 @@ const EditRegistrant = () => {
         data.set('waktu_tempuh_sekolah', time)
         data.set('jumlah_saudara', numberSibling)
         if (file) data.set('image', file)
-        const response = await fetch(`http://localhost:3001/register/${id}`, {
+        const response = await fetch(`https://itqaanserver-production.up.railway.app/register/${id}`, {
             method: 'PUT',
             body: data,
 

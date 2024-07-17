@@ -65,7 +65,7 @@ const ArticleCard = ({ isFirst, createdAt, title, summary, cover }) => {
             {isFirst ? (
                 <div className='lg:w-1/2 mb-8 lg:m-0'>
                     <div className='sm:px-8 lg:px-0'>
-                        <img className='rounded-md' loading='lazy' src={`http://localhost:3001/asset/${cover}`} alt="cover blog" />
+                        <img className='rounded-md' loading='lazy' src={`https://itqaanserver-production.up.railway.app/asset/${cover}`} alt="cover blog" />
                     </div>
                     <div className='mt-3'>
                         <p className='text-primary font-thin text-sm'>
@@ -85,7 +85,7 @@ const ArticleCard = ({ isFirst, createdAt, title, summary, cover }) => {
             ) : (
                 <div className='flex items-center gap-5 mb-8'>
                     <div className='w-2/5 flex justify-end'>
-                        <img className='lg:aspect-[1] sm:aspect-[5/3] aspect-[1] object-cover rounded-md' loading='lazy' src={`http://localhost:3001/asset/${cover}`} alt="cover blog" />
+                        <img className='lg:aspect-[1] sm:aspect-[5/3] aspect-[1] object-cover rounded-md' loading='lazy' src={`https://itqaanserver-production.up.railway.app/asset/${cover}`} alt="cover blog" />
                     </div>
                     <div className='w-3/5'>
                         <p className='text-primary font-thin sm:text-sm text-xs'>
@@ -137,16 +137,16 @@ const Home = () => {
     const isAboveLargeScreens = useMediaQuery("(min-width: 1024px)")
 
     const getPosts = async () => {
-        const response = await fetch('http://localhost:3001/posts?limit=12')
+        const response = await fetch('https://itqaanserver-production.up.railway.app/posts?limit=12')
         const data = await response.json()
         setPosts(data)
     }
 
     const getBlogs = async () => {
-        const response = await fetch('http://localhost:3001/blogs?limit=3')
+        const response = await fetch('https://itqaanserver-production.up.railway.app/blogs?limit=3')
         const data = await response.json()
-        setBlogsFirts(data.blogs.slice(0, 1))
-        setBlogsOther(data.blogs.slice(1))
+        setBlogsFirts(data?.blogs?.slice(0, 1))
+        setBlogsOther(data?.blogs?.slice(1))
     }
 
     useEffect(() => {
@@ -267,11 +267,11 @@ const Home = () => {
                     )}
                 </div>
                 <div className='lg:flex gap-5'>
-                    {blogsFirst.map((blog, index) => (
+                    {blogsFirst?.map((blog, index) => (
                         <ArticleCard key={index} isFirst={true} {...blog} />
                     ))}
                     <div className='lg:w-1/2'>
-                        {blogsOther.map((blog, index) => (
+                        {blogsOther?.map((blog, index) => (
                             <ArticleCard key={index} isFirst={false} {...blog} />
                         ))}
                     </div>
@@ -361,8 +361,8 @@ const Home = () => {
                     )}
                 </div>
                 <div className='columns-2 md:columns-3 lg:columns-4 gap-5 space-y-5 md:p-5 p-3 rounded-lg'>
-                    {posts.map((post, index) => (
-                        <img className='rounded-md opacity-95' loading='lazy' key={index} src={`http://localhost:3001/asset/${post.image}`} alt="galeri sekolah" />
+                    {posts?.map((post, index) => (
+                        <img className='rounded-md opacity-95' loading='lazy' key={index} src={`https://itqaanserver-production.up.railway.app/asset/${post.image}`} alt="galeri sekolah" />
                     ))}
                 </div>
                 {!isAboveLargeScreens && (

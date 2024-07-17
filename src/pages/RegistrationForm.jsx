@@ -195,7 +195,7 @@ const RegistrationForm = () => {
         data.set('waktu_tempuh_sekolah', time)
         data.set('jumlah_saudara', numberSibling)
 
-        const response = await fetch('http://localhost:3001/register', {
+        const response = await fetch('https://itqaanserver-production.up.railway.app/register', {
             method: 'POST',
             body: data,
         })

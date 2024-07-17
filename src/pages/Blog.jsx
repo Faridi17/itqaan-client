@@ -10,7 +10,7 @@ const ArticleCard = ({ id, createdAt, title, summary, cover, customFunc }) => {
     return (
         <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md md:flex gap-4 items-center">
             <div className='md:w-2/5'>
-                <img src={`http://localhost:3001/asset/${cover}`} loading='lazy' className='rounded-md' alt="cover blog" />
+                <img src={`https://itqaanserver-production.up.railway.app/asset/${cover}`} loading='lazy' className='rounded-md' alt="cover blog" />
             </div>
             <div className='mt-2 md:w-3/5'>
                 <div className="mb-3 text-gray-500">
@@ -41,7 +41,7 @@ const Blog = () => {
     const [id, setId] = useState('')
 
     const getBlogs = async () => {
-        const response = await fetch('http://localhost:3001/blogs')
+        const response = await fetch('https://itqaanserver-production.up.railway.app/blogs')
         const data = await response.json()
         setBlogs(data.blogs)
     }
@@ -52,7 +52,7 @@ const Blog = () => {
 
     const deleteBlog = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:3001/blogs/${id}`, {
+        const response = await fetch(`https://itqaanserver-production.up.railway.app/blogs/${id}`, {
             method: 'DELETE'
         })
         if (response.ok) {

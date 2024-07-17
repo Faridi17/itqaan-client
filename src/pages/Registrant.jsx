@@ -10,7 +10,7 @@ const Registrant = () => {
     const [id, setId] = useState('')
 
     const getRegistrant = async () => {
-        const response = await fetch('http://localhost:3001/register')
+        const response = await fetch('https://itqaanserver-production.up.railway.app/register')
         const data = await response.json()
         setRegisters(data.students)
     }
@@ -21,7 +21,7 @@ const Registrant = () => {
 
     const deleteRegistrant = async (e) => {
         e.preventDefault()
-        const response = await fetch(`http://localhost:3001/register/${id}`, {
+        const response = await fetch(`https://itqaanserver-production.up.railway.app/register/${id}`, {
             method: 'DELETE'
         })
         if (response.ok) {
@@ -46,7 +46,7 @@ const Registrant = () => {
                     {registers.map((register, index) => (
                         <div key={index} className="p-6 bg-white rounded-lg border border-gray-200 shadow-md gap-4 items-center">
                             <div className=''>
-                                <img src={`http://localhost:3001/asset/${register?.foto}`} loading='lazy' className='rounded-md' alt="cover blog" />
+                                <img src={`https://itqaanserver-production.up.railway.app/asset/${register?.foto}`} loading='lazy' className='rounded-md' alt="cover blog" />
                             </div>
                             <div className='mt-2 md:w-3/5'>
                                 <h1 className="text-2xl font-bold tracking-tight opacity-95 text-slate-800">{register?.nama_lengkap_siswa}</h1>

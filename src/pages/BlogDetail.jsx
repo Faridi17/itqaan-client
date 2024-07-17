@@ -29,14 +29,14 @@ const BlogDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const blogResponse = await fetch(`http://localhost:3001/blogs/${title}`)
+                const blogResponse = await fetch(`https://itqaanserver-production.up.railway.app/blogs/${title}`)
                 if (!blogResponse.ok) {
                     throw new Error('Blog not found')
                 }
                 const blogData = await blogResponse.json()
                 setBlog(blogData)
 
-                const relatedBlogsResponse = await fetch(`http://localhost:3001/blogs/related/${title}`)
+                const relatedBlogsResponse = await fetch(`https://itqaanserver-production.up.railway.app/blogs/related/${title}`)
                 if (!relatedBlogsResponse.ok) {
                     throw new Error('Related blogs not found')
                 }
@@ -66,7 +66,7 @@ const BlogDetail = () => {
                             </time>
                         )}
                         <div className="rounded-md object-cover px-12 py-5">
-                            <img className='object-cover rounded-sm' loading='lazy' src={`http://localhost:3001/asset/${blog?.cover}`} alt="cover blog" />
+                            <img className='object-cover rounded-sm' loading='lazy' src={`https://itqaanserver-production.up.railway.app/asset/${blog?.cover}`} alt="cover blog" />
                         </div>
                         <div className='mt-8 text-slate-700' dangerouslySetInnerHTML={{ __html: blog?.content }} />
                         <div className='border mt-12' />
@@ -92,7 +92,7 @@ const BlogDetail = () => {
                             {relatedBlogs.map((blog, index) => (
                                 <Link to={`/blog/${blog?.title}`} className='border p-2 rounded-lg flex items-center gap-3'>
                                     <div className='w-5/12'>
-                                        <img src={`http://localhost:3001/asset/${blog?.cover}`} loading='lazy' alt="" className='w-48 rounded-md' />
+                                        <img src={`https://itqaanserver-production.up.railway.app/asset/${blog?.cover}`} loading='lazy' alt="" className='w-48 rounded-md' />
                                     </div>
                                     <div className='flex flex-col gap-y-1 w-7/12'>
                                         <h2 className='text-xs text-text-color'>

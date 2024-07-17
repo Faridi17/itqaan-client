@@ -6,7 +6,7 @@ import { BiSolidTrash } from 'react-icons/bi';
 const ImageCard = ({ id, image, customFunc }) => {
     return (
         <figure className="relative">
-            <img className='rounded-md opacity-95' loading='lazy' src={`http://localhost:3001/asset/${image}`} alt="galeri sekolah" />
+            <img className='rounded-md opacity-95' loading='lazy' src={`https://itqaanserver-production.up.railway.app/asset/${image}`} alt="galeri sekolah" />
             <figcaption className="absolute bottom-3 right-3">
                 <button onClick={() => customFunc(id)} className='flex gap-1 items-center text-white bg-red-600 px-2 py-1 text-sm rounded-md'>
                     <BiSolidTrash />
@@ -37,7 +37,7 @@ const Post = () => {
         const data = new FormData()
         data.set('image', file)
         data.set('description', description)
-        const response = await fetch('http://localhost:3001/posts', {
+        const response = await fetch('https://itqaanserver-production.up.railway.app/posts', {
             method: 'POST',
             body: data,
         })
@@ -50,7 +50,7 @@ const Post = () => {
 
     const deletePost = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:3001/posts/${id}`, {
+        const response = await fetch(`https://itqaanserver-production.up.railway.app/posts/${id}`, {
             method: 'DELETE'
         })
         if (response.ok) {
@@ -61,7 +61,7 @@ const Post = () => {
     }
 
     const getPosts = async () => {
-        const response = await fetch('http://localhost:3001/posts')
+        const response = await fetch('https://itqaanserver-production.up.railway.app/posts')
         const data = await response.json()
         setPosts(data)
     }

@@ -43,7 +43,7 @@ const ArticleCard = ({ createdAt, title, summary, cover }) => {
     return (
         <article className="p-6 bg-white rounded-lg border border-gray-200 md:flex gap-4 items-center">
             <div className='md:w-2/5'>
-                <img src={`http://localhost:3001/asset/${cover}`} loading='lazy' className='rounded-md' alt="cover blog" />
+                <img src={`https://itqaanserver-production.up.railway.app/asset/${cover}`} loading='lazy' className='rounded-md' alt="cover blog" />
             </div>
             <div className='mt-2 md:w-3/5'>
                 <div className="mb-3 text-gray-500">
@@ -97,7 +97,7 @@ const ImageGallery = ({ posts }) => {
                                 <img
                                     className='rounded-md opacity-95 w-full mb-5'
                                     key={`${slideIndex}-${index}`}
-                                    src={`http://localhost:3001/asset/${post.image}`}
+                                    src={`https://itqaanserver-production.up.railway.app/asset/${post.image}`}
                                     alt={`gambar ${index}`}
                                 />
                             ))}
@@ -126,14 +126,14 @@ const Gallery = () => {
     const [countArticle, setCountArticle] = useState(1)
 
     const getBlogs = async () => {
-        const response = await fetch(`http://localhost:3001/blogs?page=${countArticle}&limit=5`)
+        const response = await fetch(`https://itqaanserver-production.up.railway.app/blogs?page=${countArticle}&limit=5`)
         const data = await response.json()
         setBlogs(data.blogs)
         setTotalPageArticle(data.totalPage)
     }
 
     const getPosts = async () => {
-        const response = await fetch('http://localhost:3001/posts')
+        const response = await fetch('https://itqaanserver-production.up.railway.app/posts')
         const data = await response.json()
         setPosts(data)
     }

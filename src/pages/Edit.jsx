@@ -31,7 +31,7 @@ const Edit = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:3001/blogs/id/${id}`)
+        fetch(`https://itqaanserver-production.up.railway.app/blogs/id/${id}`)
             .then(response => {
                 response.json().then(blogInfo => {
                     setTitle(blogInfo.title)
@@ -53,7 +53,7 @@ const Edit = () => {
         data.set('content', content)
         data.set('id', id)
         if (files?.[0]) data.set('image', files?.[0])
-        const response = await fetch(`http://localhost:3001/blogs/${id}`, {
+        const response = await fetch(`https://itqaanserver-production.up.railway.app/blogs/${id}`, {
             method: 'PUT',
             body: data,
 

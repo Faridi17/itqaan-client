@@ -37,7 +37,7 @@ const Create = () => {
         data.set('summary', summary)
         data.set('content', content)
         data.set('image', files[0])
-        const response = await fetch('http://localhost:3001/blogs', {
+        const response = await fetch('https://itqaanserver-production.up.railway.app/blogs', {
             method: 'POST',
             body: data,
         })
